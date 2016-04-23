@@ -1,4 +1,13 @@
 CurationConcerns.configure do |config|
+
+  # Generating CitiResource classes
+  config.register_curation_concern :place
+  config.register_curation_concern :exhibition
+  config.register_curation_concern :transaction
+  config.register_curation_concern :shipment
+  config.register_curation_concern :agent
+  config.register_curation_concern :work
+
   # Should schema.org microdata be displayed?
   # config.display_microdata = true
 
