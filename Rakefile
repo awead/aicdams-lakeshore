@@ -3,6 +3,11 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Rails.application.load_tasks
+# Load rake tasks for development and testing
+unless Rails.env.production?
+  Dir.glob(File.expand_path('../tasks/*.rake', __FILE__)).each do |f|
+    load(f)
+  end
+end
 
-require 'solr_wrapper/rake_task'
+Rails.application.load_tasks
